@@ -22,6 +22,7 @@ function rst_admin_enqeue_scripts() {
   if ( ( $pagenow == 'post.php' || $pagenow == 'post-new.php' ) && $typenow == 'restaurant' ) {
     wp_enqeue_style( 'rst-admin-css', plugins_url( 'css/admin-restaurants.css', __FILE__) );
     wp_enqeue_script( 'rst-resturants-js', plugins_url( 'js/admin-restaurants.js', __FILE__ ), array( 'jquery', 'jquery-ui-datepicker' ), '20180213', true );
+    //FIXME: Not production ready insert file instead of cdn
     wp_enqeue_syle( 'jquery-style', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css' );
     wp_enqeue_script( 'rst-custom-quicktags', plugins_url( 'js/rst-quicktags.js', __FILE__ ), array( 'quicktags' ), '20180214', true );
   }

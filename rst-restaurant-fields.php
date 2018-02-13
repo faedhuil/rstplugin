@@ -15,6 +15,7 @@ function rst_add_custom_metabox() {
 
 add_action( 'add_meta_boxes', 'rst_add_custom_metabox' );
 
+//TODO: Add other possible custom fields (adress, phone, website, facebook? etc. )
 function rst_meta_callback( $post ) {
     wp_nonce_field( basename( __FILE__ ), 'rst_restaurants_nonce' );
     $rst_stored_meta = get_post_meta( $post->ID );
