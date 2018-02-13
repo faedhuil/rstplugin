@@ -33,7 +33,6 @@ function rst_meta_callback() {
             </div>
         </div>
     </div>
-    
     <?php
 
 }
