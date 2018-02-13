@@ -49,7 +49,7 @@ function rst_meta_callback( $post ) {
     <?php
 }
 
-function rst_meta_save() {
+function rst_meta_save( $post_id ) {
     // Check save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_revision( $post_id );
@@ -61,7 +61,11 @@ function rst_meta_save() {
     }
 
     if ( isset( $_POST['restaurant_id'] ) ) {
-        update_post_meta( $post_id, 'restaurant_id', sanatize_text_field($_POST[ 'restaurant_id' ] ) );
+        update_post_meta( $post_id, 'restaurant_id', sanitize_text_field($_POST[ 'restaurant_id' ] ) );
+    }
+
+    if ( isset( $_POST['allgemeines'] ) ) {
+        update_post_meta( $post_id, 'allgemeines', sanitize_text_field($_POST[ 'allgemeines' ] ) );
     }
 
 }
